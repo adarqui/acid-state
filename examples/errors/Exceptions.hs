@@ -14,7 +14,7 @@ import           System.Environment
 import           Data.Typeable
 
 import           Control.Exception
-import           Prelude             hiding (catch)
+import           Prelude
 
 ------------------------------------------------------
 -- The Haskell structure that we want to encapsulate

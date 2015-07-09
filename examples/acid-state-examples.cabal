@@ -1,0 +1,174 @@
+Name:                acid-state-examples
+Version:             0.1.0
+Synopsis:            AcidState examples
+Description:         AcidState examples
+Homepage:            http://acid-state.seize.it/
+License:             PublicDomain
+Author:              David Himmelstrup
+Maintainer:          Lemmih <lemmih@gmail.com>
+-- Copyright:
+Category:            Database
+Build-type:          Simple
+Cabal-version:       >=1.10
+
+Source-repository head
+  type:          git
+  location:      https://github.com/acid-state/acid-state
+
+flag examples
+    description:        build the example programs
+    default:            False
+
+executable HelloDatabase
+    if flag(examples)
+      Buildable: True
+    else
+      Buildable: False
+    main-is:            HelloDatabase.hs
+    hs-source-dirs:     .
+    build-depends:      base >= 4 && < 5, mtl, acid-state, safecopy >= 0.6
+    default-language:   Haskell2010
+    ghc-options:        -Wall
+
+executable HelloWorld
+    if flag(examples)
+      Buildable: True
+    else
+      Buildable: False
+    main-is:            HelloWorld.hs
+    hs-source-dirs:     .
+    build-depends:      base >= 4 && < 5, mtl, acid-state, safecopy >= 0.6
+    default-language:   Haskell2010
+    ghc-options:        -Wall
+
+executable HelloWorldNoTH
+    if flag(examples)
+      Buildable: True
+    else
+      Buildable: False
+    main-is:            HelloWorldNoTH.hs
+    hs-source-dirs:     .
+    build-depends:      base >= 4 && < 5, mtl, acid-state, safecopy >= 0.6
+    default-language:   Haskell2010
+    ghc-options:        -Wall
+
+executable KeyValue
+    if flag(examples)
+      Buildable: True
+    else
+      Buildable: False
+    main-is:            KeyValue.hs
+    hs-source-dirs:     .
+    build-depends:      base >= 4 && < 5, mtl, acid-state, safecopy >= 0.6, network, containers
+    default-language:   Haskell2010
+    ghc-options:        -Wall
+
+executable KeyValueNoTH
+    if flag(examples)
+      Buildable: True
+    else
+      Buildable: False
+    main-is:            KeyValueNoTH.hs
+    hs-source-dirs:     .
+    build-depends:      base >= 4 && < 5, mtl, acid-state, safecopy >= 0.6, network, containers
+    default-language:   Haskell2010
+    ghc-options:        -Wall
+
+executable RemoteClient
+    if flag(examples)
+      Buildable: True
+    else
+      Buildable: False
+    main-is:            RemoteClient.hs
+    hs-source-dirs:     .
+    build-depends:      base >= 4 && < 5, mtl, acid-state, safecopy >= 0.6, network, containers
+    default-language:   Haskell2010
+    ghc-options:        -Wall
+
+executable RemoteServer
+    if flag(examples)
+      Buildable: True
+    else
+      Buildable: False
+    main-is:            RemoteServer.hs
+    hs-source-dirs:     .
+    build-depends:      base >= 4 && < 5, mtl, acid-state, safecopy >= 0.6, network, containers
+    default-language:   Haskell2010
+    ghc-options:        -Wall
+
+executable StressTest
+    if flag(examples)
+      Buildable: True
+    else
+      Buildable: False
+    main-is:            StressTest.hs
+    hs-source-dirs:     .
+    build-depends:      base >= 4 && < 5, mtl, acid-state, safecopy >= 0.6, network, containers
+    default-language:   Haskell2010
+    ghc-options:        -Wall
+
+executable StressTestNoTH
+    if flag(examples)
+      Buildable: True
+    else
+      Buildable: False
+    main-is:            StressTestNoTH.hs
+    hs-source-dirs:     .
+    build-depends:      base >= 4 && < 5, mtl, acid-state, safecopy >= 0.6, network, containers
+    default-language:   Haskell2010
+    ghc-options:        -Wall
+
+executable Proxy
+    if flag(examples)
+      Buildable: True
+    else
+      Buildable: False
+    main-is:            Proxy.hs
+    hs-source-dirs:     .
+    build-depends:      base >= 4 && < 5, mtl, acid-state, safecopy >= 0.6, network, containers
+    default-language:   Haskell2010
+    ghc-options:        -Wall
+
+executable SlowCheckpoint
+    if flag(examples)
+      Buildable: True
+    else
+      Buildable: False
+    main-is:            SlowCheckpoint.hs
+    hs-source-dirs:     .
+    build-depends:      base >= 4 && < 5, mtl, acid-state, safecopy >= 0.6, network, containers, time
+    default-language:   Haskell2010
+    ghc-options:        -Wall
+
+executable ChangeState
+    if flag(examples)
+      Buildable: True
+    else
+      Buildable: False
+    main-is:            ChangeState.hs
+    hs-source-dirs:     errors
+    build-depends:      base >= 4 && < 5, mtl, acid-state, safecopy >= 0.6, text
+    default-language:   Haskell2010
+    ghc-options:        -Wall
+
+executable Exceptions
+    if flag(examples)
+      Buildable: True
+    else
+      Buildable: False
+    main-is:            Exceptions.hs
+    hs-source-dirs:     errors
+    build-depends:      base >= 4 && < 5, mtl, acid-state, safecopy >= 0.6
+    default-language:   Haskell2010
+    ghc-options:        -Wall
+
+executable RemoveEvent
+    if flag(examples)
+      Buildable: True
+    else
+      Buildable: False
+    main-is:            RemoveEvent.hs
+    hs-source-dirs:     errors
+    build-depends:      base >= 4 && < 5, mtl, acid-state, safecopy >= 0.6
+    default-language:   Haskell2010
+    ghc-options:        -Wall
